@@ -162,7 +162,16 @@
 				})
 				return defer;
 			}
-
+			//取花
+			function takeFlower() {
+				//增加延时等待效果
+				var defer = $.Deferred();
+				setTimeout(function() {
+					$boy.addClass('slowFlolerWalk');
+					defer.resolve();
+				},1000);
+				return defer;
+			}
 			//计算移动距离
 			function calculateDist(direction,proportion) {
 				return (direction == 'x' ? visualWidth : visualHeight) *proportion;
@@ -177,6 +186,10 @@
 				//走进商店
 				toShop:function() {
 					return walkToShop(2000);
+				},
+				//取花
+				takeFlowers:function(){
+					return takeFlower();
 				},
 				//走出商店
 				outShop:function() {

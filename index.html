@@ -80,12 +80,15 @@
 		    		.then(function() {
 		    			return boy.toShop.apply(null,arguments);
 		    		})
+		    		.then(function(){
+		    			return boy.takeFlowers();
+		    		})
 		    		.then(function() {
 		    			//出商店
 		    			return boy.outShop.apply(null,arguments);
 		    		})
 		    		.then(function() {
-		    			return closeDoor()
+		    			return closeDoor();
 		    		})
 		    		.then(function() {
 		    			$(".b_background").removeClass("lamp-bright");
